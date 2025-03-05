@@ -1,0 +1,58 @@
+---
+title: "Data Science"
+output:
+  html_notebook: default
+  pdf_document: default
+---
+
+# Testando Carregamento de Pacote
+
+```{r}
+utils::install.packages("tidyverse")
+
+```
+
+```{r}
+library(tidyverse)
+```
+
+```{r}
+install.packages("devtools")
+devtools::install_github("r-lib/conflicted")
+```
+
+# Carregar pacote para estudo 
+
+```{r}
+ggplot2::mpg
+```
+
+# Visualizando dados 
+
+```{r}
+ggplot(data = mpg, ) +
+  geom_point(mapping = aes(x = displ, y = hwy))
+```
+
+```{r}
+ggplot(data = mpg, ) +
+  geom_point(mapping = aes(x = displ, y = cyl))
+```
+
+```{r}
+ggplot(data = mpg, ) +
+  geom_point(mapping = aes(x = displ, y = cty))
+```
+
+```{r}
+ggplot(data = mpg, aes(x = displ, y = hwy, size = cyl)) +
+  geom_point(color = "blue", alpha = 0.6) +
+  labs(size = "Tamanho (z)") +
+  theme_minimal()
+```
+
+```{r}
+ggplot(data = <DATA> +
+  <GEOM_FUNCTION>(mapping=aes(<MAPPING>))
+```
+
